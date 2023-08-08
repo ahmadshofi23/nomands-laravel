@@ -13,9 +13,9 @@
   </head>
   <body>
   
-    @include('includes.frontend.navbar')
+    @include('includes.navbar-alternate')
     @yield('content')
-    @include('includes.frontend.footer')
+    {{-- @include('includes.frontend.footer') --}}
     
     @stack('prepend-script')
     @include('includes.frontend.script')
