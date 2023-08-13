@@ -26,7 +26,11 @@ Route::get('/checkout/success',  [CheckoutController::class, 'success'])->name('
 
 Route::prefix('admin')
             ->namespace('App\Http\Controllers\Admin')
+            ->middleware(['auth','admin'])
             ->group(function(){
                 Route::get('/',     'DashboardController@index')
                             ->name('dashbord');
             });
+
+Auth::routes(['verify' => true]);
+
